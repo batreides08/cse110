@@ -1,3 +1,9 @@
+"""
+Author: Bryan Quiros
+Purpose: Calculate and display grades
+"""
+
+
 grade_percent = float(input("Please enter your grade percentage: "))
 
 letter = ""
@@ -13,15 +19,25 @@ elif grade_percent >= 60:
 else:
     letter = "F"
 
+# Challenge 1
 sign = ""
 
-if letter != "F":  # F+, and F-
-    last_digit = int(grade_percent) % 10  # get the last digit
+last_digit = grade_percent % 10
 
-    if last_digit >= 7 and letter != "A": # ignore A- or A+
-        sign = "+"
-    elif last_digit < 3:
-        sign = "-"
+if last_digit >= 7:
+    sign = "+"
+elif last_digit < 3:
+    sign = "-"
+else:
+    sign = ""
+
+# Challenge 2
+if grade_percent >= 93:
+    sign = ""
+
+# Challenge 3
+if letter == "F":
+    sign = ""
 
 
 print(f"Your grade is {letter}{sign}. ")
