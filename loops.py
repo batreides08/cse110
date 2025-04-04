@@ -1,6 +1,6 @@
 payment = float(input("What is the payment amount? "))
 
-if payment < 0:
+while payment < 0:
     print("Sorry the payment can't be negative.")
 
     payment = float(input("What is the payment amount? "))
